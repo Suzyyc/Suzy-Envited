@@ -14,16 +14,19 @@ const Landing = () => {
         flexDirection: "column",
         alignItems: "center",
         textAlign: "center",
+        backgroundColor: "#F6F2FF",
       }}
     >
-      <Heading>
+      <Heading sx={{ mt: "1rem" }}>
         Imagine if <Box as="span">Snapchat</Box> had events.
       </Heading>
-      <Text>
+      <Text sx={{ mt: "1rem" }}>
         Easily host and share events with your friends across any social media.
       </Text>
-      <Image src="/Landing_page.svg" alt="event example" />
-      <Button onClick={handleClick}>🎉Create my event</Button>
+      <Image sx={{ mt: "1rem" }} src="/Landing_page.svg" alt="event example" />
+      <Button sx={{ mt: "1rem" }} onClick={handleClick}>
+        🎉Create my event
+      </Button>
     </Box>
   );
 };

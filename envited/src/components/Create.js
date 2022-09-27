@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Text, Box, Button, Input } from "@chakra-ui/react";
+import { Text, Container, Button, Input } from "@chakra-ui/react";
 
 const initialState = {
   name: "",
@@ -41,26 +41,28 @@ const Create = () => {
       });
   };
   return (
-    <Box>
+    <Container sx={{ backgroundColor: "#F6F2FF", height: "100vh" }}>
       <form onSubmit={handleSubmit}>
-        <Text>My Event Name</Text>
+        <Text fontSize="2xl">My Event Name</Text>
         <Input onChange={handleChange} name="name" placeholder="Event Name" />
-        <Text>My Name</Text>
+        <Text fontSize="2xl">My Name</Text>
         <Input
           onChange={handleChange}
           name="hostName"
           placeholder="Host Name"
         />
-        <Text>Hosted @ </Text>
+        <Text fontSize="2xl">Hosted @ </Text>
         <Input onChange={handleChange} name="address" placeholder="location" />
-        <Text>It's Starting at </Text>
+        <Text fontSize="2xl">It's Starting at </Text>
         <Input onChange={handleChange} name="startDate" type="datetime-local" />
-        <Text>It's ending at </Text>
+        <Text fontSize="2xl">It's ending at </Text>
         <Input onChange={handleChange} name="endDate" type="datetime-local" />
         {/* Upload Image */}
-        <Button type="submit">Next</Button>
+        <Button sx={{ mt: "1rem" }} type="submit">
+          Next
+        </Button>
       </form>
-    </Box>
+    </Container>
   );
 };
 

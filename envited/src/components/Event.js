@@ -1,4 +1,4 @@
-import { Box, Text, Heading } from "@chakra-ui/react";
+import { Container, Text, Heading, Box } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -24,13 +24,13 @@ const Event = () => {
   }
 
   return (
-    <Box>
+    <Container sx={{ backgroundColor: "#F6F2FF", height: "100vh" }}>
       <Heading>{event.name}</Heading>
-      <Text>Hosted by {event.hostName}</Text>
-      <Text>{event.address}</Text>
-      <Text>{event.startDate}</Text>
-      <Text>{event.endDate}</Text>
-    </Box>
+      <Text fontSize="2xl">Hosted by {event.hostName}</Text>
+      <Text fontSize="2xl">{event.address}</Text>
+      <Text fontSize="2xl">{event.startDate}</Text>
+      <Text fontSize="2xl">{event.endDate}</Text>
+    </Container>
   );
 };
 
