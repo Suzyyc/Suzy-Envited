@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Heading, Text, Box, Button, Image, Input } from "@chakra-ui/react";
+import { Text, Box, Button, Input } from "@chakra-ui/react";
 
 const initialState = {
   name: "",
@@ -23,7 +23,6 @@ const Create = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(fields);
-
     fetch(`${process.env.REACT_APP_API_URL}/events`, {
       method: "POST",
       headers: {

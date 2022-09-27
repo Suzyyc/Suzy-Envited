@@ -11,4 +11,6 @@ const eventEntrySchema = new Schema({
   //    could use google autofill address
 });
 
+const Event = mongoose.model("Event", eventEntrySchema);
+
 module.exports = Event;
