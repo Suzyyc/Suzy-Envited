@@ -1,14 +1,18 @@
 import "./App.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import { ChakraProvider } from "@chakra-ui/react";
+
 import Landing from "./components/Landing";
 
 function App() {
   return (
-    <div className="container">
-      <Routes>
-        <Route path="/" element={<Landing />} />
-      </Routes>
-    </div>
+    <ChakraProvider>
+      <Container centerContent>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+        </Routes>
+      </Container>
+    </ChakraProvider>
   );
 }
 
