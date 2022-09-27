@@ -10,7 +10,8 @@ const dbURL = process.env.MONGODB_URL;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-const whitelist = ["http://localhost:4001"];
+
+const whitelist = ["http://localhost:3000"];
 app.use(
   cors({
     origin: (origin, cb) => {

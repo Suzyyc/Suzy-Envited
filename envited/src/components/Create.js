@@ -23,17 +23,40 @@ const Create = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(fields);
+
+    fetch(`${process.env.REACT_APP_API_URL}/events`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(fields),
+      credentials: "include",
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+      });
   };
   return (
     <Box>
-      {/* Event Name
-      Host name
-      Start and End time/date
-      Location
-      Event Photo */}
       <form onSubmit={handleSubmit}>
+        <Text>My Event Name</Text>
         <Input onChange={handleChange} name="name" placeholder="Event Name" />
-
+        <Text>My Name</Text>
+        <Input
+          onChange={handleChange}
+          name="hostName"
+          placeholder="Host Name"
+        />
+        <Text>Hosted @ </Text>
+        <Input onChange={handleChange} name="address" placeholder="location" />
+        <Text>It's Starting at </Text>
+        <Input onChange={handleChange} name="startDate" type="datetime-local" />
+        <Text>It's ending at </Text>
+        <Input onChange={handleChange} name="endDate" type="datetime-local" />
+        {/* Upload Image */}
         <Button type="submit">Next</Button>
       </form>
     </Box>
