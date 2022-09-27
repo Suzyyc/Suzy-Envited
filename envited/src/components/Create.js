@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Text, Box, Button, Input } from "@chakra-ui/react";
 
 const initialState = {
@@ -11,6 +12,7 @@ const initialState = {
 
 const Create = () => {
   const [fields, setFields] = useState(initialState);
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     console.log(event);
@@ -35,7 +37,7 @@ const Create = () => {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
+        navigate(`/events/${data._id}`);
       });
   };
   return (

@@ -4,12 +4,10 @@ const eventsRouter = express.Router();
 const Event = require("../models/event.js");
 
 // get
-eventsRouter.get("/", async (req, res) => {
-  const createEvents = await Event.find({
-    date: { $gte: req.query.startDate, $lt: req.query.endDate },
-  }).exec();
+eventsRouter.get("/:id", async (req, res) => {
+  const event = await Event.findById(req.params.id).exec();
   console.log("query", req.query);
-  res.status(200).json(createEvents);
+  res.status(200).json(event);
 });
 
 // post
