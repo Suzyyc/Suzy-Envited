@@ -11,18 +11,13 @@ const dbURL = process.env.MONGODB_URL;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-const whitelist = ["http://localhost:3000"];
-app.use(
-  cors({
-    origin: (origin, cb) => {
-      if (whitelist.indexOf(origin) !== -1) {
-        cb(null, true);
-      } else {
-        cb(new Error());
-      }
-    },
-  })
-);
+const corsOptions = {
+  origin: ["http://localhost:3000"],
+  methods: ["GET", "POST"],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 app.use("/events", eventsRouter);
 
