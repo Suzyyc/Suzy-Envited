@@ -1,6 +1,12 @@
 import { Heading, Text, Box, Button, Image } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/create");
+  };
+
   return (
     <Box
       sx={{
@@ -17,7 +23,7 @@ const Landing = () => {
         Easily host and share events with your friends across any social media.
       </Text>
       <Image src="/Landing_page.svg" alt="event example" />
-      <Button>🎉Create my event</Button>
+      <Button onClick={handleClick}>🎉Create my event</Button>
     </Box>
   );
 };
