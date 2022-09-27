@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, Container } from "@chakra-ui/react";
 
 import Landing from "./components/Landing";
 
